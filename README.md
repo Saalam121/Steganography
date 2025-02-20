@@ -23,7 +23,7 @@ Follow these steps to install and run the application:
 
 2️⃣ **Navigate to the project directory:**  
 ```bash
-   cd steganography-gui
+   cd steganography
 ```
 
 3️⃣ **Install dependencies:**  
