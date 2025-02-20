@@ -7,14 +7,14 @@ import os
 class SteganographyApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Secure Image Steganography")
-        self.root.geometry("800x600")
-        self.root.minsize(800, 600)  # Minimum window size
-        self.root.configure(bg="#f0f0f0")  # Light gray background
+        self.root.title("Secure Image Steganography GUI App")
+        self.root.geometry("690x600")
+        self.root.minsize(690, 600)
+        self.root.configure(bg="#f0f0f0")
 
         # Set a modern font
-        self.font = ("Segoe UI", 12)
-        self.title_font = ("Segoe UI", 16, "bold")
+        self.font = ("Arial", 12)
+        self.title_font = ("Lucida Sans", 20, "bold")
 
         # Configure ttk style
         self.style = ttk.Style()
@@ -56,7 +56,6 @@ class SteganographyApp:
         self.status.pack(side=tk.BOTTOM, fill=tk.X)
 
     def create_encrypt_tab(self, frame):
-        # Title
         ttk.Label(frame, text="Encrypt Secret Message", font=self.title_font).grid(
             row=0, column=0, columnspan=3, pady=10
         )
@@ -206,7 +205,6 @@ class SteganographyApp:
             if save_path:
                 cv2.imwrite(save_path, img)
                 self.update_status(f"Encryption successful! Saved to {save_path}")
-                # os.system(f"start {save_path}")
                 messagebox.showinfo("Success", "Encryption successful!")
 
                 self.encrypt_path.set("")
@@ -252,5 +250,6 @@ class SteganographyApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
+    root.resizable(0, 0)
     app = SteganographyApp(root)
     root.mainloop()
